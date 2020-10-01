@@ -16,13 +16,12 @@ namespace boyd_linkedlist
 
 
                 Console.WriteLine();
-                Console.WriteLine("1.list all items");
-                Console.WriteLine("2.show head");
-                Console.WriteLine("3.add items");
-                Console.WriteLine("4.remove items");
-                Console.WriteLine("5.search items");
-                Console.WriteLine("6.print");
-                Console.WriteLine("7.exit");
+                Console.WriteLine("1.show head");
+                Console.WriteLine("2.add items");
+                Console.WriteLine("3.remove items");
+                Console.WriteLine("4.search items");
+                Console.WriteLine("5.print");
+                Console.WriteLine("6.exit");
                 userInput = parseinput();
                 UserOptions(userInput, programList);
                 Console.WriteLine();
@@ -36,40 +35,33 @@ namespace boyd_linkedlist
             string newItems;
             switch (number)
             {
+                
                 case 1:
-                    Console.WriteLine("here is a list of all items that are in the list.");
-                    programList.PrintAllNodes();
-
+                    Console.WriteLine("here is the first item in the list " + programList.GetFirst());
                     break;
                 case 2:
-                    Console.WriteLine("here is the first item in the list " + programList.GetFirst());
-
-                    break;
-                case 3:
                     Console.WriteLine("enter what you would like to be added to the list");
                     newItems = getuserItem();
                     programList.AddLast(newItems);
                     Console.WriteLine(newItems + " was added");
-
                     break;
-                case 4:
+                case 3:
                     Console.WriteLine("enter the item you want to remove.");
                     newItems = getuserItem();
                     Console.WriteLine(programList.RemoveNode(newItems));
-
                     break;
-                case 5:
+                case 4:
                     Console.WriteLine("enter the item you want to search for.");
                     newItems = getuserItem();
                     Console.WriteLine(programList.SearchNodes(newItems));
                     Console.WriteLine();
                     break;
-                case 6:
+                case 5:
                     Console.WriteLine("here is a list of all items that are in the list.");
                     programList.PrintAllNodes();
                     Console.WriteLine();
                     break;
-                case 7:
+                case 6:
                     Console.WriteLine();
                     break;
             }
